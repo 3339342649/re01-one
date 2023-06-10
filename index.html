@@ -1,47 +1,279 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>颜之理</title>
-    <style>  
-      body {
-        margin: 0;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex 布局</title>
   </head>
-  <body>
-    <div style="
-    background-color: #f1f1f1;
-    text-align: center;
-    padding:40px;
-    ">
-      <img src="https://pic3.zhimg.com/50/v2-53ae9e4ce07396ae796cc90a08b6c258_hd.jpg?source=1940ef5c" alt="颜之理" width="80px" height="80px">
+  <style>
+    body {
+      margin: o;
+      height: 100vh;
+      background-color: #eee;
+    }
+    /* * {
+      border: 1px solid black;
+    } */
+    .yinying {
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+    .flex {
+      display: flex;
+    }
+    .baise {
+      background-color: white;
+    }
+    .flex1 {
+      flex: 1;
+    }
+    .column {
+      flex-direction: column;
+    }
+    .mg8 {
+      margin: 8px;
+    }
+    .mgr8 {
+      margin-right: 8px;
+    }
+    .mgt8 {
+      margin-top: 8px;
+    }
+    .daohang {
+      padding: 10px 20px;
+      border-bottom: 1px solid rgb(198, 191, 191);
+      font-size: 14px;
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      .cebian {
+        display: none;
+      }
+      .neirong {
+        flex-direction: column;
+      }
+      .shujuqu {
+        flex-direction: column;
+      }
+      .youqu {
+        margin-left: 8px;
+      }
+      .shuju {
+        margin: 0 0 8px;
+        flex: auto;
+      }
+    }
+    .neirong::-webkit-scrollbar {
+      dispiay: none;
+    }
+  </style>
+  <body class="flex">
+    <!--侧边栏 -->
+    <div style="width: 200px; z-index: 2" class="cebian baise yinying">
+      <!--头像栏-->
+      <div
+        style="
+          padding: 10px;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid;
+        "
+        class="flex"
+      >
+        <img
+          src="https://img1.baidu.com/it/u=1387435494,3809478704&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400"
+          alt="颜之理"
+          width="60px"
+          height="60px"
+        />
+        <div style="margin-left: 10px; font-size: 20px">颜之理</div>
+      </div>
+      <!--导航栏-->
+      <div class="flex1">
+        <div class="daohang">甘肃天水</div>
+        <div class="daohang">天津理工大学</div>
+        <div
+          style="align-items: center; justify-content: center"
+          class="flex daohang"
+        >
+          <input style="width: 60px; text-align: center" value="注释" />
+        </div>
+        <div
+          style="
+            padding: 15px;
+            text-indent: 2em;
+            text-align: start;
+            padding: 10px 10px 40px 10px;
+            line-height: 1.7;
+          "
+        >
+          教育对于一个家庭、群体、国家、乃至于世界都是十分重要。但是东西地域的教育资源差距较大，而且随着孩子教育资本的提升，孩子的教育成为了普通家庭的重要负担。所以我们需要一套廉价而具有实际意义的教育资源。
+        </div>
+      </div>
     </div>
-    <div style="
-     background-color: #f1f1f1;
-     max-width:700px;
-     margin: 30px auto;
-     padding: 15px;
-     line-height:1.7;
-    ">
-      <p>跷跷板
-刘一朵指着床尾的摇柄对我说，摇六下，是仰卧，能喝水。摇十二下，能坐直，他坐不直，往下出溜，你给他垫个枕头。我说，你铺垫了吗？她说，你自己跟他说一下。我说，还是应该铺垫一下。她说，他现在疼得一会明白，一会糊涂，你自己铺垫。
-
-刘一朵比我高，大概高十五公分，主要是高在腿上，上半身我和她差不多，脖子我比她还长一点，主要是腿，腿长，胳膊也长。所以据我目测，我一下摇不了她那么瓷实，可能得七下，十三下。这是一间单人病房，窗帘和沙发是蓝的，上午的太阳一照，好像在透视。茶几上摆着几个橘子和一只细口花瓶，花瓶里没有花，暖气太热，一般花都死，刘一朵买了一盆仙人掌，放在花瓶旁边，像是一个自卑的胖子。夜里守夜的是刘一朵她妈，我叫阿姨，为了显得亲切，我不说你妈，一般都说我姨。此时我姨已经回去，睡在她家那张巨大的床上。床有四柱，上有木顶，极像轿子，床体极大，两米乘两米五，放于主卧。白天是刘一朵的班，她请了四个月假，遵医嘱，四个月差不多，顶多五个月，我叔也该走了。晚上有时我住在刘家，家的面积有点大，楼下一层，楼上一层，还有个天台。刘一朵说自己住，放个屁都有回音。（小说飞行家）</p>
-      <p></p>
-      <p></p>
-      <p></p>
-
-    </div>
-    <div style="
-    background-color: #f1f1f1;
-    text-align: center;
-    padding:40px;
-    font-size:12px;
-    ">
-    <p>我的网站</p>
-    <a href="http://kangwenchang.com/">学习链接</a>
+    <!--主区域 -->
+    <div class="flex1 flex column">
+      <!--头部栏-->
+      <div
+        style="
+          font-style: oblique;
+          background-color: #4789fb;
+          text-align: center;
+          font-size: 3em;
+          height: 60px;
+          z-index: 1;
+        "
+        class="yinying"
+      >
+        IMMEDIATE ACTION
+      </div>
+      <!--内容栏-->
+      <div style="overflow: auto" class="neirong flex1 flex">
+        <!--左区-->
+        <div style="flex: 3" class="flex column mg8">
+          <!--概述区-->
+          <div class="flex column">
+            <!--展示区-->
+            <div class="shujuqu flex">
+              <!--展示块-->
+              <div style="height: 100px" class="shuju flex1 baise yinying mgr8">
+                课内
+              </div>
+              <div style="height: 100px" class="shuju flex1 baise yinying mgr8">
+                课外
+              </div>
+              <div style="height: 100px" class="shuju flex1 baise yinying mgr8">
+                兴趣
+              </div>
+              <div style="height: 100px" class="shuju flex1 baise yinying">
+                思想
+              </div>
+            </div>
+            <!--陈述区-->
+            <div
+              style="
+                line-height: 1.7;
+                text-indent: 2em;
+                padding: 15px;
+                height: 530px;
+              "
+              class="baise yinying mgt8"
+            >
+              <p>
+                大侠：小伙子我看你骨骼惊奇，是难得一遇的练武奇才，我愿意将我的毕生所学免费传授于你。怎么样有没有兴趣。<br />
+              </p>
+              <p>
+                我：不是吧，这么多年，终于有人看出来我是百年难得一遇的练武奇才。<br />
+              </p>
+              <p>
+                大侠：我可以免费教你，但是我这里有本绝世武林秘籍《如来神掌》，原价1999，现在只要998。<br />
+              </p>
+              <p>
+                我：……额，你这书皮是金子做的，还是字是金子写的。
+                ……ntm不要是吧,我（哎吆）……萨日朗、萨日朗。<br />
+              </p>
+              <p>
+                所以一直到我上大学，都没有自己特别痴迷的爱好，以至于在大学自我介绍的时候，只能说：大家好，我叫颜之理，我平时喜欢利用夸张的手法来和有志之士谈论古今。这让我在接下来的一段时间里和一群吹牛大王，从宇宙大爆炸谈到生物起源，从龙兽大战到旧石器时代，在这个过程中我发现我还是一个很好的听众。后来也是学了游泳、健美。虽然“夏天去游泳馆游泳多是一件美事啊”，毕竟有很多美女，哦不对，毕竟夏天的游泳馆是避暑的好地方，加之游泳本身是一项不错的运动。但我还是喜欢去踢野球，在无数个加速奔跑中身体产生的多巴胺让我快乐，所以快乐是会上瘾的，虽然有时候被足球队的初中生虐成小菜，但依旧改变不了我对快乐的上瘾。综合自己的过往，我有时候会想要是有个廉价而高效的适合大多数普通家庭的综合教育机构会是什么样子，我想把我想象中的它分成四个部分，课内、课外、兴趣、思想。
+              </p>
+            </div>
+            <div
+              style="
+                line-height: 1.7;
+                text-indent: 2em;
+                padding: 15px;
+                height: 230px;
+              "
+              class="baise yinying mgt8"
+            >
+              课内：
+              <p>
+                教育体系内的课程本身是为孩子奠定基础的。我初一刚放暑假没几天，我爸就花三百给报了补课班，虽然当时非常不情愿，但对我后来的学习还是相当有帮助的。
+              </p>
+            </div>
+            <div
+              style="
+                line-height: 1.7;
+                text-indent: 2em;
+                padding: 15px;
+                height: 230px;
+              "
+              class="baise yinying mgt8"
+            >
+              课外：
+              <p>
+                课外教育，可以影响孩子的三观和对这个世界的认识。相对于课内的东西，孩子们更喜欢课外的东西，比如三观正确的动画片和小说著作之类的。我小时候读过一本叫《兄弟情仇》的小说，至今影响深刻，它讲述的是两只不同环境下（温馨和残酷）牧羊犬兄弟相争相爱的故事，我读玩的大概感受就是：好的牧羊犬永远不是训练它们的嗜血能达到的，相反温馨有爱的牧场才是优秀的牧羊犬最佳成长环境，勇敢不是好勇斗狠，而是明明害怕但还是勇敢向前。至于我了解这个世界的方法便是在电视上看动物世界了，见识世界各地风景、动物。要是可以评价的话我给动物世界打五星好评。
+              </p>
+            </div>
+            <div
+              style="
+                line-height: 1.7;
+                text-indent: 2em;
+                padding: 15px;
+                height: 230px;
+              "
+              class="baise yinying mgt8"
+            >
+              兴趣：
+              <p>
+                人以类聚，物以群分。兴趣爱好的重要性不言而喻，喜欢玩什么，就会决定和什么人玩，当然喜欢吹牛的话也可以，但至少要喜欢或者痴迷一项准确合法的爱好。我踢野球的时候遇到了一个带着小熊帽子的小学生，我喜欢叫他小熊饼干，踢球的时候为了防我，老是抱着我的腰，给我禁锢在原地，于是在队友奋力突防的时候，我和小熊饼干谈论起了古今中外，再后来在球场上见面已经是一年之后，他长成了大熊饼干，差点没认出来，再后来就没有见过了。
+              </p>
+            </div>
+            <div
+              style="
+                line-height: 1.7;
+                text-indent: 2em;
+                padding: 15px;
+                height: 230px;
+              "
+              class="baise yinying mgt8"
+            >
+              思想：
+              <p>
+                我想人最大的差别便是思想的不同，思想决定了你是什么样的人，更直接地说决定了你是谁。当今科技人们可以美容、训练来实现对一个人模仿，但是模拟一个人的思想，这恐怕不是一朝一夕能做到的。所以我觉得一个人的成长最重要的是思想的成长。（有一部经典电影《变脸》）
+              </p>
+            </div>
+            <div
+              style="
+                line-height: 1.7;
+                text-indent: 2em;
+                padding: 15px;
+                height: 230px;
+              "
+              class="baise yinying mgt8"
+            >
+              以上仅我自己的个人观点，可能与你的不一样，毕竟每个人总是不一样的，如果上面这些使得你想要和我交流，或者也想一起学编程，那真的是“泰裤辣”，俗话说得好一根筷子轻轻折断，一把筷子（本来想找个一把筷子被折断的GIF，没找到。但是电影《乘风破浪》里有个场景，这个电影也不错，可以看一下。）……，挺难折断的，但还是要量力而行。
+            </div>
+          </div>
+        </div>
+        <!--右区-->
+        <div style="flex: 1; margin: 8px 0" closs="youqu flex column mgr8 mgt8">
+          <!--提示区-->
+          <div style="padding: 8px; height: 110px" class="baise yinying">
+            邮 箱:
+            <input
+              style="margin: 60px 0px 10px 5px"
+              type="text"
+              required
+              minlength="4"
+              maxlength="50"
+              size=" 25px"
+              value="3339342649@qq.com"
+            />
+          </div>
+          <!--消息区-->
+          <div style="padding: 8px; height: 300px" class="baise yinying mgt8">
+            说明：
+            <!--说明栏-->
+            <div class="flex1">
+              <div class="daohang">网站1.0版，中间四个盒子以</div>
+              <div class="daohang">后打算放“课内、课外、兴</div>
+              <div class="daohang">趣、思想”的链接。</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
